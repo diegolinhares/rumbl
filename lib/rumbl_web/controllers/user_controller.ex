@@ -9,7 +9,7 @@ defmodule RumblWeb.UserController do
     render(conn, "index.html", users: users)
   end
 
-  def show(conn, %{"id"=> id}) do
+  def show(conn, %{"id" => id}) do
     user = Accounts.get_user(id)
     render(conn, "show.html", user: user)
   end
@@ -27,7 +27,7 @@ defmodule RumblWeb.UserController do
         |> redirect(to: Routes.user_path(conn, :index))
 
       {:error, %Ecto.Changeset{} = changeset} ->
-      render(conn, "new.html", changeset: changeset)
+        render(conn, "new.html", changeset: changeset)
     end
   end
 end
